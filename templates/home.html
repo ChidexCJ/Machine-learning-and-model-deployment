@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+
+            * {margin: 0; padding: 0;
+            }
+            h1 {font-size: 15px;}
+            p{font-size: 80; font-style: italic;}
+            body {background-image: url("static/images/bgi_1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;}
+            .form-group {float: left;
+                         width: 50%;
+                         height: 50px;
+                         font-size: 20px}
+
+            .btn {background-color: blue;
+            color: white;
+            text-align: center;
+            font-size: 25px;}
+
+            ::placeholder {color: black;
+            font-size: 15px;}
+
+
+
+    </style>
+
+    <title>flask app</title>
+</head>
+<body ><font face="arial" color="midnightblue">
+<h1><div style="text-align:center" ><font size="50px" >Heart Disease Prediction Form</div></h1>
+
+<h1>
+    <div class="container">
+        <div class = 'row'>
+            <div class="col-6">
+                <form method="POST" action="/predict">
+                    <div class="form-group">
+                        <label for="Age"><p class="font-weight-bold">Age</p></label>
+                        <input type="text" placeholder="Enter Age" name="Age">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="RestingBP"><p class="font-weight-bold">Resting BP</p></label>
+                        <input type="text" name="RestingBP" placeholder="Enter RestingBP">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Cholesterol"><p class="font-weight-bold">Cholesterol</p></label>
+                        <input type="text" name="Cholesterol" placeholder="Enter Cholesterol">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="FastingBS"><p class="font-weight-bold">FastingBS</p></label>
+                        <input type="text" name="FastingBS" placeholder="Enter FastingBS">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="MaxHR"><p class="font-weight-bold">MaxHR</p></label>
+                        <input type="text" name="MaxHR" placeholder="Enter MaxHR">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="OldPeak"><p class="font-weight-bold">OldPeak</p></label>
+                        <input type="text" name="OldPeak" placeholder="Enter OldPeak">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Sex_F"><p class="font-weight-bold">Female</p></label>
+                        <input type="text" name="Sex_F" placeholder="Enter 1 if female else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Sex_M"><p class="font-weight-bold">Male</p></label>
+                        <input type="text" name="Sex_M" placeholder="Enter 1 if Male else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ChestPainType_ASY"><p class="font-weight-bold">ChestPainType ASY</p></label>
+                        <input type="text" name="ChestPainType_ASY" placeholder="Enter 1 if ASY else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ChestPainType_ATA"><p class="font-weight-bold">ChestPainType ATA</p></label>
+                        <input type="text" name="ChestPainType_ATA" placeholder="Enter 1 if ATA else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ChestPainType_NAP"><p class="font-weight-bold">ChestPainType NAP</p></label>
+                        <input type="text" name="ChestPainType_NAP" placeholder="Enter 1 NAP else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ChestPainType_TA"><p class="font-weight-bold">ChestPainType TA</p></label>
+                        <input type="text" name="ChestPainType_TA" placeholder="Enter 1 if TA else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="RestingECG_LVH"><p class="font-weight-bold">RestingECG LVH</p></label>
+                        <input type="text" name="RestingECG_LVH" placeholder="Enter 1 if LVH else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="RestingECG_Normal"><p class="font-weight-bold">RestingECG Normal</p></label>
+                        <input type="text" name="RestingECG_Normal" placeholder="Enter 1 if Normal else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="RestingECG_ST"><p class="font-weight-bold">RestingECG ST</p></label>
+                        <input type="text" name="RestingECG_ST" placeholder="Enter 1 if ST else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ExerciseAngina_N"><p class="font-weight-bold">ExerciseAngina NO</p></label>
+                        <input type="text" name="ExerciseAngina_N" placeholder="Enter 1 if No else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ExerciseAngina_Y"><p class="font-weight-bold">ExerciseAngina YES</p></label>
+                        <input type="text" name="ExerciseAngina_Y" placeholder="Enter 1 if Yes else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ST_Slope_Down"><p class="font-weight-bold">ST_Slope Down</p></label>
+                        <input type="text" name="ST_Slope_Down" placeholder="Enter 1 if Down else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ST_Slope_Flat"><p class="font-weight-bold">ST_Slope Flat</p></label>
+                        <input type="text" name="ST_Slope_Flat" placeholder="Enter 1 if Flat else 0">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ST_Slope_Up"><p class="font-weight-bold">ST_Slope Up</p></label>
+                        <input type="text" name="ST_Slope_Up" placeholder="Enter 1 if Up else 0">
+
+                    </div>
+                    <input class="btn btn-primary" type="submit"  value="Predict">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</h1>
+</font>
+</body>
+</html>
